@@ -1,0 +1,405 @@
+<html>
+	<head>
+<!--
+        <script src="processing.js"></script>
+-->
+	<script src="https://github.com/downloads/processing-js/processing-js/processing-1.4.1.min.js"></script>
+      
+      <script type="text/processing" data-processing-target="targetcanvas">
+void setup() { 
+  size(400, 400); 
+}
+var cloudx = 0;
+var canopyx = 100;
+var petalsx = 0;
+var Timer = 0;
+var Stemsx = 0;
+var Stigmax = 0;
+var leavesx = 0;
+var birdiex = 0;
+var birdiey = 0;
+var grassx= 0;
+
+var draw(){
+    background(196, 243, 255);
+    
+    //SkyFall
+        //Highlights
+        fill(202, 240, 252);
+        //Shadows
+        fill(74, 113, 171);
+    
+    //THe HiLLs Are aLIVe 
+        fill(4, 74, 7);
+        ellipse(60,375,1000,150);
+    
+        noStroke();
+    //trunk
+        fill(99, 37, 4);
+        rect(150,200,100,600);
+        
+        //highlight
+        fill(135, 88, 23);
+        
+        rect(150,300,10,10);
+        rect(230,320,10,10);
+        rect(176,276,10,10);
+        rect(167,374,10,10);
+        rect(187,345,10,10);
+        rect(234,365,10,10);
+        rect(165,333,10,10);
+        rect(220,376,10,10);
+        rect(220,285,10,10);
+        
+        //shadows
+        fill(36, 23, 3);
+        
+        rect(157,348,10,10);
+        rect(179,290,10,10);
+        rect(154,315,10,10);
+        rect(240,330,10,10);
+        rect(215,276,10,10);
+        rect(240,245,10,10);
+        rect(185,380,10,10);
+        rect(240,376,10,10);
+        rect(219,345,10,10);
+        
+    
+    //bird hole
+        fill(38, 21, 7);
+        ellipse(200,325,40,50);
+        //highlight
+        fill(153, 113, 52);
+        rect(189,305,5,5);
+        rect(194,323,5,5);
+        rect(204,330,5,5);
+        rect(192,342,5,5);
+        
+        //shadow
+        fill(0, 0, 0);
+        rect(200,320,5,5);
+        rect(210,330,5,5);
+        rect(195,310,5,5);
+        rect(189,336,5,5);
+
+    
+    //sun
+        fill(255, 255, 0);
+        ellipse(315,50,150,150);
+        //Highlight
+        fill(255, 255, 178);
+        rect(350,50,10,10);
+        rect(270,4,10,10);
+        rect(302,34,10,10);
+        rect(344,21,10,10);
+        rect(350,90,10,10);
+        //Shadow
+        fill(255, 199, 56);
+        rect(289,10,10,10);
+        rect(350,90,10,10);
+        rect(332,45,10,10);
+        rect(370,20,10,10);
+    
+    //clouds
+        //BaseColor
+        fill(229, 227, 230);
+        ellipse(cloudx+10,50,100,60);
+        ellipse(cloudx+5,75,50,40);
+        ellipse(cloudx+5,25,40,40);
+        //ShadowColor
+        fill(199, 199, 199);
+        rect(cloudx+10,15,5,5);
+        rect(cloudx+-25,63,5,5);
+        rect(cloudx+-23,45,5,5);
+        rect(cloudx+-5,56,5,5);
+        rect(cloudx+-12,63,5,5);
+        rect(cloudx+14,52,5,5);
+        rect(cloudx+15,80,5,5);
+        //Highlight
+        fill(255, 255, 255);
+        rect(cloudx+5,40,5,5);
+        rect(cloudx+1,13,5,5);
+        rect(cloudx+10,7,5,5);
+        rect(cloudx+2,40,5,5);
+        rect(cloudx+-15,30,5,5);
+        rect(cloudx+-30,53,5,5);
+        rect(cloudx+-32,61,5,5);
+        rect(cloudx+-35,45,5,5);
+        rect(cloudx+13,46,5,5);
+        rect(cloudx+32,45,5,5);
+        rect(cloudx+34,34,5,5);
+    
+        cloudx +=1/2;
+    
+        if(cloudx===500){
+        cloudx=-50;
+    }
+        
+    //TreeTop
+        //Canopy
+        fill(28, 77, 0);
+        ellipse(canopyx+100,200,200,150);
+        ellipse(canopyx,150,200,150);
+        ellipse(canopyx+50,80,200,150);
+        ellipse(canopyx+150,100,200,150);
+        ellipse(canopyx+200,175,200,150);
+    
+        canopyx += 0.1*sin(Timer);
+        Timer += 1;
+        //Dark Leaves
+        fill(10, 51, 10);
+        rect(leavesx+134,160,10,10);
+        rect(leavesx+144,170,10,10);
+        rect(leavesx+134,180,10,10);
+        rect(leavesx+102,185,10,10);
+        rect(leavesx+70,200,10,10);
+        rect(leavesx+60,200,10,10);
+        rect(leavesx+176,250,10,10);
+        rect(leavesx+193,265,10,10);
+        rect(leavesx+169,261,10,10);
+        rect(leavesx+130,240,10,10);
+        rect(leavesx+54,100,10,10);
+        rect(leavesx+300,210,10,10);
+        rect(leavesx+300,220,10,10);
+        rect(leavesx+320,110,10,10);
+        rect(leavesx+308,230,10,10);
+        rect(leavesx+350,220,10,10);
+        rect(leavesx+384,193,10,10);
+        rect(leavesx+258,246,10,10);
+        rect(leavesx+228,198,10,10);
+        rect(leavesx+160,83,10,10);
+        rect(leavesx+122,10,10,10);
+        rect(leavesx+10,160,10,10);
+        rect(leavesx+250,75,10,10);
+        rect(leavesx+244,84,10,10);
+        rect(leavesx+130,10,10,10);
+        rect(leavesx+40,195,10,10);
+        rect(leavesx+260,230,10,10);
+        rect(leavesx+180,170,10,10);
+        rect(leavesx+289,160,10,10);
+        rect(leavesx+267,156,10,10);
+        rect(leavesx+293,156,10,10);
+        rect(leavesx+213,134,10,10);
+        //Light Leaves
+        fill(23, 105, 14);
+        rect(leavesx+65,154,10,10);
+        rect(leavesx+132,54,10,10);
+        rect(leavesx+156,170,10,10);
+        rect(leavesx+173,12,10,10);
+        rect(leavesx+165,12,10,10);
+        rect(leavesx+230,65,10,10);
+        rect(leavesx+265,143,10,10);
+        rect(leavesx+320,230,10,10);
+        rect(leavesx+143,198,10,10);
+        rect(leavesx+123,94,10,10);
+        rect(leavesx+15,134,10,10);
+        rect(leavesx+165,98,10,10);
+        rect(leavesx+320,176,10,10);
+        rect(leavesx+342,123,10,10);
+        rect(leavesx+383,167,10,10);
+        rect(leavesx+167,156,10,10);
+        rect(leavesx+298,87,10,10);
+        rect(leavesx+287,54,10,10);
+        rect(leavesx+221, 123,10,10);
+        rect(leavesx+198,65,10,10);
+        rect(leavesx+234,167,10,10);
+        rect(leavesx+254,213,10,10);
+        rect(leavesx+80,132,10,10);
+        rect(leavesx+54,90,10,10);
+        rect(leavesx+190,21,10,10);
+        rect(leavesx+254,43,10,10);
+        rect(leavesx+320,54,10,10);
+        rect(leavesx+278,120,10,10);
+        rect(leavesx+89,21,10,10);
+        rect(leavesx+137,87,10,10);
+        rect(leavesx+198,21,10,10);
+        
+        
+        leavesx += 0.1*sin(Timer);
+        Timer += 1;
+        
+    
+    //Petals
+        fill(255, 191, 0);
+        ellipse(petalsx+50,350,15,15);
+        ellipse(petalsx+50,365,15,15);
+        ellipse(petalsx+44,357,15,15);
+        ellipse(petalsx+57,358,15,15);
+    
+        ellipse(petalsx+253,350,15,15);
+        ellipse(petalsx+253,365,15,15);
+        ellipse(petalsx+246,357,15,15);
+        ellipse(petalsx+260,358,15,15);
+    
+        ellipse(petalsx+350,350,15,15);
+        ellipse(petalsx+350,365,15,15);
+        ellipse(petalsx+343,357,15,15);
+        ellipse(petalsx+357,358,15,15);
+        
+        //Highlight
+        fill(255, 254, 171);
+        rect(petalsx+48,364,5,5);
+        rect(petalsx+48,345,5,5);
+        rect(petalsx+39,355,5,5);
+        rect(petalsx+55,355,5,5);
+        
+        rect(petalsx+250,364,5,5);
+        rect(petalsx+250,345,5,5);
+        rect(petalsx+242,355,5,5);
+        rect(petalsx+260,355,5,5);
+        
+        rect(petalsx+348,364,5,5);
+        rect(petalsx+348,345,5,5);
+        rect(petalsx+338,355,5,5);
+        rect(petalsx+355,355,5,5);
+        
+        //Shadow
+        fill(186, 152, 18);
+        
+        rect(petalsx+45,360,5,5);
+        rect(petalsx+50,360,5,5);
+        rect(petalsx+45,350,5,5);
+        rect(petalsx+50,350,5,5);
+
+        rect(petalsx+246,360,5,5);
+        rect(petalsx+254,360,5,5);
+        rect(petalsx+247,350,5,5);
+        rect(petalsx+254,350,5,5);
+        
+        rect(petalsx+345,360,5,5);
+        rect(petalsx+350,360,5,5);
+        rect(petalsx+345,350,5,5);
+        rect(petalsx+350,350,5,5);
+    
+        petalsx += 0.05*sin(Timer);
+        Timer += 3/4;
+        
+        
+    
+    //Stigma
+        fill(189, 82, 11);
+    
+        ellipse(Stigmax+50,357,7,7);
+    
+        ellipse(Stigmax+253,357,7,7);
+    
+        ellipse(Stigmax+350,357,7,7);
+    
+        Stigmax += 0.05*sin(Timer);
+        Timer += 1;
+
+
+    //ground
+        fill(7, 97, 7);
+        rect(0,390,500,30);
+    
+    
+    //Stems of Flowers
+        stroke(3, 46, 8);
+        line(Stemsx+50,373,50,400);
+    
+        line(Stemsx+253,373,253,400);
+    
+        line(Stemsx+353,373,353,400);
+
+        Stemsx += 0.05*sin(Timer);
+        Timer += 1;
+    
+        noStroke();
+        
+    //Grass
+        //Highlight
+        fill(39, 156, 39);
+        rect(grassx+75,380,5,20);
+        rect(grassx+380,380,5,20);
+        rect(grassx+122,380,5,25);
+        rect(grassx+176,380,5,20);
+        rect(grassx+20,380,5,25);
+        rect(grassx+199,380,5,15);
+        rect(grassx+120,380,5,25);
+        rect(grassx+312,380,5,20);
+        rect(grassx+344,380,5,15);
+        rect(grassx+56,380,5,20);
+        //Shadow
+        fill(18, 51, 15);
+        rect(grassx+20,20,5,20);
+        rect(grassx+20,20,5,20);
+        rect(grassx+20,20,5,20);
+        rect(grassx+20,20,5,20);
+        rect(grassx+20,20,5,20);
+        
+        
+    //BirdieSanders
+        fill(219, 106, 0);
+        ellipse(birdiex+ 200,birdiey+128,05,10);
+        
+        fill(64, 112, 255);
+        
+        ellipse(birdiex+200,birdiey+138,20,20);
+        ellipse(birdiex+200,birdiey+155,15,50);
+        triangle(birdiex+190,birdiey+190,birdiex+200,birdiey+170,birdiex+210,birdiey           +190);
+        ellipse(birdiex+175,birdiey+155,55,20);
+        ellipse(birdiex+225,birdiey+155,55,20);
+        
+        //Highlight
+        fill(100, 142, 219);
+        rect(birdiex+197,birdiey+136,05,5);
+        rect(birdiex+210,birdiey+146,5,5);
+        rect(birdiex+220,birdiey+146,5,5);
+        rect(birdiex+230,birdiey+146,5,5);
+        rect(birdiex+240,birdiey+148,5,5);
+        rect(birdiex+197,birdiey+158,5,5);
+        rect(birdiex+150,birdiey+150,5,5);
+        rect(birdiex+160,birdiey+147,5,5);
+        rect(birdiex+170,birdiey+146,5,5);
+        rect(birdiex+180,birdiey+146,5,5);
+        rect(birdiex+198,birdiey+184,5,5);
+        //Shadow
+        fill(44, 82, 133);
+        rect(birdiex+192,birdiey+146,5,5);
+        rect(birdiex+198,birdiey+177,5,5);
+        rect(birdiex+203,birdiey+146,5,5);
+        rect(birdiex+160,birdiey+159,5,5);
+        rect(birdiex+152,birdiey+157,5,5);
+        rect(birdiex+170,birdiey+161,5,5);
+        rect(birdiex+180,birdiey+160,5,5);
+        rect(birdiex+206,birdiey+160,5,5);
+        rect(birdiex+215,birdiey+160,5,5);
+        rect(birdiex+225,birdiey+160,5,5);
+        rect(birdiex+235,birdiey+160,5,5);
+        rect(birdiex+243,birdiey+158,5,5);
+        rect(birdiex+190,birdiey+160,5,5);
+        
+        fill(0, 0, 0);
+        rect(birdiex+194,birdiey+131,3,3);
+        rect(birdiex+201,birdiey+131,3,3);
+    
+        birdiex += 2*sin(Timer);
+        Timer += 1;
+        
+        if(keyIsPressed && keyCode === UP && birdiey+110>0){
+            birdiey -= 10;
+        }
+        
+        if(keyIsPressed && keyCode === DOWN && birdiey+200<400){
+            birdiey += 10;
+        }
+        if(keyIsPressed && keyCode === LEFT && birdiex+135>0){
+            birdiex -= 10;
+        }
+        if(keyIsPressed && keyCode === RIGHT && birdiex+270<400){
+            birdiex += 10;
+        }
+};
+
+
+
+
+</script>
+
+	<head>
+    <body>
+        <canvas id="targetcanvas"
+	width="400" height="400" "></canvas>
+    </body>
+</html>
