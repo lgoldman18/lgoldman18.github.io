@@ -9,7 +9,7 @@
 void setup() { 
   size(400, 400); 
 }
-var cloudx = 0;
+
 var canopyx = 100;
 var petalsx = 0;
 var Timer = 0;
@@ -20,7 +20,7 @@ var birdiex = 0;
 var birdiey = 0;
 var grassx= 0;
 
-var draw(){
+var draw = function(){
     background(196, 243, 255);
     
     //SkyFall
@@ -322,11 +322,11 @@ var draw(){
         rect(grassx+56,380,5,20);
         //Shadow
         fill(18, 51, 15);
-        rect(grassx+20,20,5,20);
-        rect(grassx+20,20,5,20);
-        rect(grassx+20,20,5,20);
-        rect(grassx+20,20,5,20);
-        rect(grassx+20,20,5,20);
+        rect(grassx+143,380,5,15);
+        rect(grassx+98,380,5,25);
+        rect(grassx+215,380,5,15);
+        rect(grassx+267,380,5,20);
+        rect(grassx+324,380,5,25);
         
         
     //BirdieSanders
@@ -391,7 +391,6 @@ var draw(){
             birdiex += 10;
         }
 };
-
 
 
 
